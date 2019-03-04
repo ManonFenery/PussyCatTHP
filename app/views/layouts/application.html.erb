@@ -4,12 +4,73 @@
     <title>PussyCatTHP</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" media="screen" href="assets/stylesheets/vendor.min.css">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/stylesheets/theme.min.css">
+    <!-- Modernizr-->
+    <script src="js/modernizr.min.js"></script>
   </head>
 
   <body>
+
+  <div class="offcanvas-container is-triggered offcanvas-container-reverse" id="mobile-menu"><span class="offcanvas-close"><i class="fe-icon-x"></i></span>
+      <div class="px-4 pb-4">
+        <h6>Menu</h6>
+        <div class="d-flex justify-content-between pt-2">
+          <div class="btn-group w-100 mr-2"><a class="btn btn-secondary btn-sm btn-block dropdown-toggle" href="#" data-toggle="dropdown"><img src="img/flags/en.png" alt="English"/>English</a>
+            <div class="dropdown-menu" style="min-width: 150px;"><a class="dropdown-item" href="#"><img src="img/flags/fr.png" alt="Français"/>Français</a><a class="dropdown-item" href="#"><img src="img/flags/de.png" alt="Deutsch"/>Deutsch</a><a class="dropdown-item" href="#"><img src="img/flags/it.png" alt="Italiano"/>Italiano</a></div>
+          </div><a class="btn btn-primary btn-sm btn-block" href="account-login.html"><i class="fe-icon-user"></i>&nbsp;Login</a>
+        </div>
+      </div>
+      <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
+        <!-- Mobile Menu-->
+        <div class="accordion mobile-menu" id="accordion-menu">
+          <!-- Home-->
+          <div class="card">
+            <div class="card-header"><a class="mobile-menu-link active" href="index.html">Home</a><a class="collapsed" href="#home-submenu" data-toggle="collapse"></a></div>
+            <div class="collapse" id="home-submenu" data-parent="#accordion-menu">
+              <div class="card-body">
+                <ul>
+                  <li class="dropdown-header"><i class="fe-icon-briefcase"></i>&nbsp;&nbsp;Portfolio</li>
+                  <li class="dropdown-item"><a href="home-digital-agency.html">Digital Agency</a></li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Architectural Agency<span class="badge badge-secondary">Soon</span></a></li>
+                  <li class="dropdown-item"><a href="home-freelancer-portfolio.html">Freelancer's Portfolio</a></li>
+                  <li class="dropdown-item"><a href="home-photographer-portfolio.html">Photographer's Portfolio</a></li>
+                  <li class="dropdown-header"><i class="fe-icon-shopping-bag"></i>&nbsp;&nbsp;E-Commerce</li>
+                  <li class="dropdown-item"><a href="home-shop-v1.html">Online Shop v.1</a></li>
+                  <li class="dropdown-item active"><a href="home-shop-v2.html">Online Shop v.2</a></li>
+                  <li class="dropdown-header"><i class="fe-icon-edit"></i>&nbsp;&nbsp;Blog</li>
+                  <li class="dropdown-item"><a href="home-corporate-blog.html">Corporate Blog</a></li>
+                  <li class="dropdown-item"><a href="home-personal-blog.html">Personal Blog</a></li>
+                  <li class="dropdown-header"><i class="fe-icon-home"></i>&nbsp;&nbsp;Landing Pages</li>
+                  <li class="dropdown-item"><a href="home-mobile-app-showcase.html">Mobile App Showcase</a></li>
+                  <li class="dropdown-item"><a href="home-web-app-showcase.html">Web App Showcase (SAAS)</a></li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Product Promo Page<span class="badge badge-secondary">Soon</span></a></li>
+                  <li class="dropdown-item"><a href="home-conference-landing.html">Conference Landing</a></li>
+                  <li class="dropdown-header"><i class="fe-icon-dollar-sign"></i>&nbsp;&nbsp;Business</li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Corporate Website<span class="badge badge-secondary">Soon</span></a></li>
+                  <li class="dropdown-item"><a href="home-marketing-seo.html">Digital Marketing &amp; SEO</a></li>
+                  <li class="dropdown-item"><a href="home-capital-investments.html">Venture Capital Investments</a></li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Startup Homepage<span class="badge badge-secondary">Soon</span></a></li>
+                  <li class="dropdown-header"><i class="fe-icon-menu"></i>&nbsp;&nbsp;Directory &amp; Listings</li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Real Estate Listing<span class="badge badge-secondary">Soon</span></a></li>
+                  <li class="dropdown-item"><a class="disabled-link" href="#">Jobs Board<span class="badge badge-secondary">Soon</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
     <%= yield %>
+
+    
+    
   </body>
 </html>
