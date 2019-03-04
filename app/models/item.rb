@@ -11,4 +11,5 @@ class Item < ApplicationRecord
 	validates :price, presence: true
 
 	validates :img_url, presence: true
+
 end
