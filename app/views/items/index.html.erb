@@ -1,0 +1,15 @@
+<div>
+<h1>Pussy Cat</h1>
+</div>
+
+
+<h2>Photos de Chatons</h2>
+
+<div>
+	<% @items.each do |item| %>
+		<h6><%= item.img_url %></h6>
+		<h5><%= item.title %></h5>
+		<h6><%= item.description %></h6>
+		<h6><%= item.price %></h6>
+	<% end %>
+</div>
