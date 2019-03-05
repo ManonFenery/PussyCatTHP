@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+	has_many :line_items, dependent: :destroy
 
 	validates :title,
   	presence: true,
