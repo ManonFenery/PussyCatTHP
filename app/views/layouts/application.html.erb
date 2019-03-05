@@ -21,9 +21,12 @@
       <div class="px-4 pb-4">
         <h6>Menu</h6>
         <div class="d-flex justify-content-between pt-2">
-          <div class="btn-group w-100 mr-2"><a class="btn btn-secondary btn-sm btn-block dropdown-toggle" href="#" data-toggle="dropdown"><img src="img/flags/en.png" alt="English"/>English</a>
-            <div class="dropdown-menu" style="min-width: 150px;"><a class="dropdown-item" href="#"><img src="img/flags/fr.png" alt="Français"/>Français</a><a class="dropdown-item" href="#"><img src="img/flags/de.png" alt="Deutsch"/>Deutsch</a><a class="dropdown-item" href="#"><img src="img/flags/it.png" alt="Italiano"/>Italiano</a></div>
-          </div><a class="btn btn-primary btn-sm btn-block" href="account-login.html"><i class="fe-icon-user"></i>&nbsp;Login</a>
+        <% if user_signed_in? %>
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm btn-block" %>
+        <% else %>
+        <a class="btn btn-primary btn-sm btn-block" href="<%= new_user_session_path %>"><i class="fas fa-user"></i>&nbsp;Connexion</a>
+        <a class="btn btn-outline-primary btn-sm btn-block" href="<%= new_user_registration_path %>"><i class="fas fa-user"></i>&nbsp;Créer un compte</a>
+        <% end %>
         </div>
       </div>
       <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
@@ -63,85 +66,6 @@
               </div>
             </div>
           </div>
-          <!-- Portfolio-->
-          <div class="card">
-            <div class="card-header"><a class="mobile-menu-link" href="portfolio-style1-boxed.html">Portfolio</a><a class="collapsed" href="#portfolio-submenu" data-toggle="collapse"></a></div>
-            <div class="collapse" id="portfolio-submenu" data-parent="#accordion-menu">
-              <div class="card-body">
-                <ul>
-                  <li class="dropdown-item"><a href="portfolio-style1-boxed.html">Style 1 Grid</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="portfolio-style1-boxed.html">Style 1 Boxed Layout</a></li>
-                      <li class="dropdown-item"><a href="portfolio-style1-fw.html">Style 1 Full Width Layout</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="portfolio-style2-boxed.html">Style 2 Grid</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="portfolio-style2-boxed.html">Style 2 Boxed Layout</a></li>
-                      <li class="dropdown-item"><a href="portfolio-style2-fw.html">Style 2 Full Width Layout</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="portfolio-single-side-gallery-grid.html">Single Project</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="portfolio-single-side-gallery-grid.html">Side Gallery Grid</a></li>
-                      <li class="dropdown-item"><a href="portfolio-single-side-gallery-list.html">Side Gallery List</a></li>
-                      <li class="dropdown-item"><a href="portfolio-single-wide-slider.html">Wide Slider</a></li>
-                      <li class="dropdown-item"><a href="portfolio-single-wide-gallery.html">Wide Gallery</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Blog-->
-          <div class="card">
-            <div class="card-header"><a class="mobile-menu-link" href="blog-grid-rs.html">Blog</a><a class="collapsed" href="#blog-submenu" data-toggle="collapse"></a></div>
-            <div class="collapse" id="blog-submenu" data-parent="#accordion-menu">
-              <div class="card-body">
-                <ul>
-                  <li class="dropdown-header">Blog Layouts</li>
-                  <li class="dropdown-item"><a href="blog-grid-rs.html">Grid Right Sidebar</a></li>
-                  <li class="dropdown-item"><a href="blog-grid-ls.html">Grid Left Sidebar</a></li>
-                  <li class="dropdown-item"><a href="blog-grid-ns.html">Grid No Sidebar</a></li>
-                  <li class="dropdown-header">Single Post Formats</li>
-                  <li class="dropdown-item"><a href="blog-single-gallery.html">Post Gallery</a></li>
-                  <li class="dropdown-item"><a href="blog-single-carousel.html">Post Image Carousel</a></li>
-                  <li class="dropdown-item"><a href="blog-single-video.html">Post Video</a></li>
-                  <li class="dropdown-item"><a href="blog-single-audio.html">Post Audio</a></li>
-                  <li class="dropdown-item"><a href="blog-single-quotation.html">Post Quotation</a></li>
-                  <li class="dropdown-item"><a href="blog-single-link.html">Post Link</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Shop-->
-          <div class="card">
-            <div class="card-header"><a class="mobile-menu-link" href="shop-boxed-ls.html">Shop</a><a class="collapsed" href="#shop-submenu" data-toggle="collapse"></a></div>
-            <div class="collapse" id="shop-submenu" data-parent="#accordion-menu">
-              <div class="card-body">
-                <ul>
-                  <li class="dropdown-header">Shop Layouts</li>
-                  <li class="dropdown-item"><a href="shop-boxed-ls.html">Boxed Left Sidebar</a></li>
-                  <li class="dropdown-item"><a href="shop-boxed-rs.html">Boxed Right Sidebar</a></li>
-                  <li class="dropdown-item"><a href="shop-boxed-ft.html">Boxed Filters Top</a></li>
-                  <li class="dropdown-item"><a href="shop-boxed-ns.html">Boxed No Sidebar</a></li>
-                  <li class="dropdown-item"><a href="shop-fw-ls.html">Full Width Left Sidebar</a></li>
-                  <li class="dropdown-item"><a href="shop-fw-rs.html">Full Width Right Sidebar</a></li>
-                  <li class="dropdown-item"><a href="shop-fw-ft.html">Full Width Filters Top</a></li>
-                  <li class="dropdown-item"><a href="shop-fw-ns.html">Full Width No Sidebar</a></li>
-                  <li class="dropdown-header">Shop Pages</li>
-                  <li class="dropdown-item"><a href="shop-categories.html">Shop Categories</a></li>
-                  <li class="dropdown-item"><a href="shop-single.html">Product Page</a></li>
-                  <li class="dropdown-item"><a href="cart.html">Cart</a></li>
-                  <li class="dropdown-item"><a href="checkout-address.html">Checkout - Address</a></li>
-                  <li class="dropdown-item"><a href="checkout-shipping.html">Checkout - Shipping</a></li>
-                  <li class="dropdown-item"><a href="checkout-payment.html">Checkout - Payment</a></li>
-                  <li class="dropdown-item"><a href="checkout-review.html">Checkout - Review</a></li>
-                  <li class="dropdown-item"><a href="checkout-complete.html">Checkout - Complete</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <!-- Account-->
           <div class="card">
             <div class="card-header"><a class="mobile-menu-link" href="account-orders.html">Compte</a><a class="collapsed" href="#account-submenu" data-toggle="collapse"></a></div>
@@ -150,60 +74,17 @@
                 <ul>
                   <li class="dropdown-item"><a href="<%= new_user_session_path %>">Connexion</a></li>
                   <li class="dropdown-item"><a href="<%= new_user_registration_path %>">Créer mon compte</a></li>
+                <% if user_signed_in? %>
                   <li class="dropdown-item"><a href="account-password-recovery.html">Mot de Passe oublié</a></li>
                   <li class="dropdown-item"><a href="account-orders.html">Mes Commandes</a></li>
                   <li class="dropdown-item"><a href="account-tickets.html">Mes Tickets</a></li>
                   <li class="dropdown-item"><a href="account-single-ticket.html">Envoyer un Ticket</a></li>
+                <% end %>
                 </ul>
               </div>
             </div>
           </div>
-          <!-- Pages-->
-          <div class="card">
-            <div class="card-header"><a class="mobile-menu-link active" href="#">Pages</a><a class="collapsed" href="#pages-submenu" data-toggle="collapse"></a></div>
-            <div class="collapse" id="pages-submenu" data-parent="#accordion-menu">
-              <div class="card-body">
-                <ul>
-                  <li class="dropdown-item active"><a href="about-us-v1.html">About Us</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="about-us-v1.html">About Us v.1</a></li>
-                      <li class="dropdown-item active"><a href="about-us-v2.html">About Us v.2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="contacts-v1.html">Contacts</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="contacts-v1.html">Contacts v.1</a></li>
-                      <li class="dropdown-item"><a href="contacts-v2.html">Contacts v.2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="help-topics.html">Help Center</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="help-topics.html">Help Topics</a></li>
-                      <li class="dropdown-item"><a href="help-single-topic.html">Single Topic</a></li>
-                      <li class="dropdown-item"><a href="help-submit-request.html">Submit a Request</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="services.html">Services</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="services.html">Services Landing</a></li>
-                      <li class="dropdown-item"><a href="services-single.html">Single Service Page</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="pricing.html">Pricing</a></li>
-                  <li class="dropdown-item"><a href="product-comparison.html">Product Comparison</a></li>
-                  <li class="dropdown-item"><a href="order-tracking.html">Order Tracking</a></li>
-                  <li class="dropdown-item"><a href="search-results.html">Search Results</a></li>
-                  <li class="dropdown-item"><a href="coming-soon-light.html">Coming Soon</a>
-                    <ul class="mobile-sublevel">
-                      <li class="dropdown-item"><a href="coming-soon-light.html">Coming Soon Light</a></li>
-                      <li class="dropdown-item"><a href="coming-soon-dark.html">Coming Soon Dark</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item"><a href="404.html">404 Not Found</a></li>
-                  <li class="dropdown-item"><a class="text-accent" href="docs/dev-setup.html"><i class="d-inline-block fe-icon-file-text align-middle mr-1"></i>Documentation</a></li>
-                </ul>
-              </div>
-            </div>
+ 
           </div>
         </div>
       </div>
@@ -242,6 +123,7 @@
         <div class="navbar-top d-none d-lg-flex justify-content-between align-items-center">
           <div><a class="navbar-link mr-3" href="mailto:support@pussycat.com"><i class="far fa-envelope"></i>support@pussycat.com</a><a class="social-btn sb-style-3 sb-twitter" href="#"><i class="socicon-twitte"></i></a><a class="social-btn sb-style-3 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-3 sb-pinterest" href="#"><i class="socicon-pinterest"></i></a><a class="social-btn sb-style-3 sb-instagram" href="#"><i class="socicon-instagram"></i></a></div>
           <div>
+          <% if user_signed_in? == false %>
             <ul class="list-inline mb-0">
               <li class="dropdown-toggle mr-2"><a class="navbar-link" href="account-login.html"><i class="far fa-user"></i>Se connecter / Créer un compte</a>
                 <div class="dropdown-menu right-aligned p-3 text-center" style="min-width: 200px;">
@@ -250,6 +132,13 @@
                 </div>
               </li>
             </ul>
+          <% else %>
+            <ul class="list-inline mb-0">
+              <li>
+                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </li>
+            </ul>
+          <% end %>
           </div>
         </div>
         <div class="navbar justify-content-end justify-content-lg-between">
@@ -297,12 +186,16 @@
             <!-- Account-->
             <li class="nav-item dropdown-toggle"><a class="nav-link" href="account-orders.html">Mon Compte</a>
               <ul class="dropdown-menu">
+                <% if user_signed_in? == false %>
                   <li class="dropdown-item"><a href="<%= new_user_session_path %>">Connexion</a></li>
                   <li class="dropdown-item"><a href="<%= new_user_registration_path %>">Créer un compte</a></li>
+                <% else %>
+                  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                   <li class="dropdown-item"><a href="account-password-recovery.html">Mot de Passe oublié</a></li>
                   <li class="dropdown-item"><a href="account-orders.html">Mes Commandes</a></li>
                   <li class="dropdown-item"><a href="account-tickets.html">Mes Tickets</a></li>
                   <li class="dropdown-item"><a href="account-single-ticket.html">Envoyer un Ticket</a></li>
+                <% end %>
               </ul>
             </li>
           </ul>
@@ -374,13 +267,17 @@
             <div class="widget widget-categories widget-light-skin">
               <h4 class="widget-title">Compte &amp; Infos Livraison</h4>
               <ul>
-                <li><a href="#">Mon Compte</a></li>
+              <% if user_signed_in? == false %>
                 <li><a href="<%= new_user_session_path %>">Connexion</a></li>
                 <li><a href="<%= new_user_registration_path %>">Créer un compte</a></li>
+              <% else %>
+                <li><a href="#">Mon Compte</a></li>
+                <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
                 <li><a href="#">Politique de &amp; Livraison</a></li>
                 <li><a href="#">Remboursements &amp; Remplacement</a></li>
                 <li><a href="#">Taxes</a></li>
                 <li><a href="#">Programme Affilié</a></li>
+              <% end %>
               </ul>
             </div>
           </div>
