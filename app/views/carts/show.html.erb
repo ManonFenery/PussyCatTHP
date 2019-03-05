@@ -15,10 +15,10 @@
         <%= link_to "Retirer du panier", line_item_path(line_item), method: :delete %>
       </li>
     </ul>
-  <% end $>
+  <% end %>
 </ul>
 
 <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-<%= link_to "Passer au paiement", new_order_path %><br>
-<%= link_to "Vider le panier", cart_path(@current_path), method: :delete, data: {"Sûr de toi?"}
+<p><%= link_to "Passer au paiement", new_order_path %></p><br>
+<p><%= link_to "Vider le panier", cart_path(@current_cart), method: :delete %></p>
 
