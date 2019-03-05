@@ -1,0 +1,24 @@
+<h2> CART </h2>
+
+<ul>
+  <% @cart.line_items.each do |line_item| %>
+    <li>Produit : <%= line_item.item.title %></li>
+    <li>Prix : <%= number_to_currency(line_item.item.price) %></li>
+    <li>Quantité : <%= line_item.quantity %></li>
+    <li>Prix Total : <%= number_to_currency(line_item.total_price) %></li>
+    <ul>
+      <li>
+        <%= link_to "Ajouter un", line_item_add_path(:id => line_item), method: :post %>
+        <%= link_to "Enlever un", line_item_reduce_path(:id => line_item), method: :post %>
+      </li>
+      <li>
+        <%= link_to "Retirer du panier", line_item_path(line_item), method: :delete %>
+      </li>
+    </ul>
+  <% end $>
+</ul>
+
+<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+<%= link_to "Passer au paiement", new_order_path %><br>
+<%= link_to "Vider le panier", cart_path(@current_path), method: :delete, data: {"Sûr de toi?"}
+
