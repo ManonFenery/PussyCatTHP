@@ -12,3 +12,10 @@ Item.destroy_all
 20.times do 
 	item = Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.registry, price: Faker::Number.decimal(2), img_url: Faker::Internet.url('example.com'))
 end
+
+
+
+5.times do
+	cart = Cart.create
+	line_item = LineItem.create(quantity: 2, item_id: Item.all.sample.id, cart_id: Cart.all.sample.id)
+end

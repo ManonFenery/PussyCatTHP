@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+	has_many :line_items, dependent: :destroy
 
 	validates :title,
   	presence: true,
@@ -11,4 +12,5 @@ class Item < ApplicationRecord
 	validates :price, presence: true
 
 	validates :img_url, presence: true
+
 end
