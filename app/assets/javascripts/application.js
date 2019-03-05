@@ -14,3 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require modernizr.min.js
+//= require vendor.min.js
+//= require theme.min.js
+
