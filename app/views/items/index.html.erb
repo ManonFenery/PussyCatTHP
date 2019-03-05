@@ -201,14 +201,14 @@
                 <div class="product-head text-right">
                   <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                   </div>
-                </div><a class="product-thumb" href="shop-single.html"><img src="img/shop/11.jpg" alt="Product Thumbnail"/> <%= item.img_url %></a>
+                </div><a class="product-thumb" href="<%= item.img_url %>"><img src="img/shop/11.jpg" alt="Product Thumbnail"/></a>
                 <div class="product-card-body"><a class="product-meta" href="shop-categories.html">Headphones</a>
                   <h5 class="product-title"><a href="<%= item_path(item.id) %>"><%= item.title %></a></h5><span class="product-price"><%= item.price %> &nbsp; €</span>
                 </div>
                 <div class="product-buttons-wrap">
                   <div class="product-buttons">
                     <div class="product-button"><a href="#" data-toast data-toast-position="topRight" data-toast-type="info" data-toast-icon="fe-icon-help-circle" data-toast-title="Product" data-toast-message="added to your wishlist!"><i class="fas fa-heart"></i></a></div>
-                    <div class="product-button"><%= link_to '<i class="fas fa-shopping-cart"></i> Add to cart'.html_safe, line_items_path(:item_id => item.id), :method => :post, :'data-toast data-toast-position' => 'topRight', :'data-toast-type' => 'success', :'data-toast-icon' => 'fe-icon-check-circle', :'data-toast-title' => 'Product', :'data-toast-message' => 'added to cart successfuly!' %></div>
+                    <div class="product-button"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, line_items_path(:item_id => item.id), :method => :post, :'data-toast data-toast-position' => 'topRight', :'data-toast-type' => 'success', :'data-toast-icon' => 'fe-icon-check-circle', :'data-toast-title' => 'Product', :'data-toast-message' => 'added to cart successfuly!' %></div>
                   </div>
                 </div>
               </div>
