@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
 
 		#If cart already has this item then find the relevant line_item and iterate quantity 
 		#OTHERWISE create a new line_item for this product
-		if current_cart.items.include?(chose_item)
+		if current_cart.items.include?(chosen_item)
 			#Find the line_item with the chosen_item
 			@line_item = current_cart.line_items.find_by(:item_id => chosen_item)
 			#Iterate the line_item's quantity by one
