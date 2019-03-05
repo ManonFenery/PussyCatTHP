@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 		end
 
 #If there is no session[:cart_id] associated with this user then create a new cart and store it in the users session id
-		if session[:cart_id] = nil
+		if session[:cart_id] == nil
 			@current_cart = Cart.create
 			session[:cart_id] = @current_cart.id
 		end
