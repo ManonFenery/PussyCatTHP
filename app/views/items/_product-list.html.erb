@@ -1,0 +1,36 @@
+<div class="col-lg-9">
+          <!-- Shop Grid-->
+          <div class="row">
+      
+        <% @items.each do |item| %>
+			     <div class="col-md-4 col-sm-6 mb-30">
+              <div class="product-card mx-auto mb-3">
+                <a class="product-thumb" href="<%= item.img_url %>"><img src="img/shop/11.jpg" alt="Product Thumbnail"/></a>
+                <div class="product-card-body"><a class="product-meta" href="shop-categories.html">Headphones</a>
+                  <h5 class="product-title"><a href="<%= item_path(item.id) %>"><%= item.title %></a></h5><span class="product-price"><%= item.price %> &nbsp; €</span>
+                </div>
+                <div class="product-buttons-wrap">
+                  <div class="product-buttons">
+                    <div class="product-button"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, line_items_path(:item_id => item.id), :method => :post, :'data-toast data-toast-position' => 'topRight', :'data-toast-type' => 'success', :'data-toast-icon' => 'fe-icon-check-circle', :'data-toast-title' => 'Product', :'data-toast-message' => 'added to cart successfuly!' %></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+     		<% end %>
+          </div>
+          <div class="pt-3">
+            <!-- Pagination-->
+            <nav class="pagination"><a class="prev-btn" href="#"><i class="fas fa-arrow-left mr-2"></i>Précédent</a>
+              <ul class="pages">
+                <li class="d-block d-sm-none w-100">2 / 18</li>
+                <li class="d-none d-sm-inline-block"><a href="#">1</a></li>
+                <li class="d-none d-sm-inline-block active"><a href="#">2</a></li>
+                <li class="d-none d-sm-inline-block"><a href="#">3</a></li>
+                <li class="d-none d-sm-inline-block"><a href="#">4</a></li>
+                <li class="d-none d-sm-inline-block"><a href="#">5</a></li>
+                <li class="d-none d-sm-inline-block">...</li>
+                <li class="d-none d-sm-inline-block"><a href="#">18</a></li>
+              </ul><a class="next-btn" href="#">Suivant<i class="fas fa-arrow-right ml-2"></i></a>
+            </nav>
+          </div>
+        </div>

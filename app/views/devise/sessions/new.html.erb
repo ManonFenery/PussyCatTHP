@@ -5,12 +5,12 @@
             <div class="wizard-body pt-2">
               <h3 class="h4 pt-4 pb-2">Connecte-toi</h3>
               <div class="input-group form-group">
-                <div class="input-group-prepend"><span class="input-group-text"><i class="fe-icon-mail"></i></span></div>
+                <div class="input-group-prepend"><span class="input-group-text"><i class="far fa-envelope"></i></span></div>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
                 <div class="invalid-feedback">Entre un email valide</div>
               </div>
               <div class="input-group form-group">
-                <div class="input-group-prepend"><span class="input-group-text"><i class="fe-icon-lock"></i></span></div>
+                <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></i></span></div>
                 <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Mot de Passe" %>
                 <div class="invalid-feedback">Entre un mot de passe valide</div>
               </div>
@@ -26,6 +26,6 @@
               <%= f.submit "Me Connecter", class: "btn btn-primary" %>
             </div>
           <% end %>
-        </div>
       </div>
     </div>
+</div>

@@ -1,0 +1,40 @@
+    <!-- Page Content-->
+<div class="container mb-2 mt-5">
+      <div class="row">
+        <!-- Product Gallery-->
+        <div class="col-md-6 pb-5">
+          <div class="product-gallery"><span class="badge badge-danger text-md font-weight-normal">Sale</span>
+            <div class="product-carousel owl-carousel"><a class="gallery-item" href="" data-fancybox="gallery1" data-hash="one"><img src="src="<%= @item.img_url %>" alt="Product"></a></div>
+            <ul class="product-thumbnails">
+              <li class="active"><a href="#one"><img src="<%= @item.img_url %>" alt="Product"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Product Info-->
+        <div class="col-md-6 pb-5">
+          <div class="product-meta"><i class="far fa-bookmark"></i><a href="#">Action cameras</a></div>
+          <h2 class="h3 font-weight-bold"><%= @item.title %></h2>
+          <h3 class="h4 font-weight-light"><%= @item.price %>&nbsp; €</h3>
+          <p class="text-muted"><%= @item.description %></p>
+          <div class="row align-items-end pb-4">
+            <div class="col-sm-4">
+              <div class="form-group mb-0">
+                <label for="quantity">Quantité</label>
+                <select class="form-control" id="quantity">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="pt-4 hidden-sm-up"></div>
+              <%= link_to '<i class="fas fa-shopping-cart"></i> Ajouter au panier'.html_safe, line_items_path(:item_id => @item.id), :method => :post, class: "btn btn-primary btn-block m-0", :'data-toast data-toast-position' => 'topRight', :'data-toast-type' => 'success', :'data-toast-icon' => 'fe-icon-check-circle', :'data-toast-title' => 'Product', :'data-toast-message' => 'added to cart successfuly!' %>
+            </div>
+          </div>
+          <hr class="mb-2">
+        </div>
+      </div>
+</div>
