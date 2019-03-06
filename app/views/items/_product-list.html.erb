@@ -5,10 +5,7 @@
         <% @items.each do |item| %>
 			     <div class="col-md-4 col-sm-6 mb-30">
               <div class="product-card mx-auto mb-3">
-                <div class="product-head text-right">
-                  <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div><a class="product-thumb" href="<%= item.img_url %>"><img src="img/shop/11.jpg" alt="Product Thumbnail"/></a>
+                <a class="product-thumb" href="<%= item.img_url %>"><img src="img/shop/11.jpg" alt="Product Thumbnail"/></a>
                 <div class="product-card-body"><a class="product-meta" href="shop-categories.html">Headphones</a>
                   <h5 class="product-title"><a href="<%= item_path(item.id) %>"><%= item.title %></a></h5><span class="product-price"><%= item.price %> &nbsp; €</span>
                 </div>
