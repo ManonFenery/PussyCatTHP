@@ -11,7 +11,7 @@ class LineItemsController < ApplicationController
 		#OTHERWISE create a new line_item for this product
 		if current_cart.items.include?(chosen_item)
 			#Find the line_item with the chosen_item
-			@line_item = current_cart.line_items.find_by(:item_id => chosen_item)
+			@line_item = current_cart.line_items.find_by(item_id: chosen_item)
 			#Iterate the line_item's quantity by one
 			@line_item.quantity += 1
 		else
@@ -55,7 +55,7 @@ class LineItemsController < ApplicationController
 	private
 
 	def line_item_params
-		params.require(:line_item).permit(:quantity, :item_id, :cart_id)
+		params.require(:line_item).permit(:quantity, :item_id, :cart_id, :order_id)
 	end
 
 end

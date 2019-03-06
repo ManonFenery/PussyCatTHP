@@ -19,9 +19,13 @@ LineItem.destroy_all
 end
 
 
-
+=begin
 10.times do
-	cart = Cart.create(user_id: User.all.sample.id)
+	cart = Cart.create
 	order = Order.create(name: Faker::Artist.name, email: Faker::Internet.email, address: Faker::Address.full_address, pay_method: Faker::Artist.name)
+end
+
+30.times do
 	line_item = LineItem.create(quantity: 2, item_id: Item.all.sample.id, cart_id: Cart.all.sample.id, order_id: Order.all.sample.id)
 end
+=end

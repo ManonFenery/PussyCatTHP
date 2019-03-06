@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
 	before_action :current_cart
+	
 
 	
 	private
@@ -9,7 +10,7 @@ class ApplicationController < ActionController::Base
 #If a session[:cart_id] already exists then find the Cart with that id, if there is no cart with that id then set the session id to nil
 	def current_cart
 		if session[:cart_id]
-			cart = Cart.find_by(:id => session[:cart_id])
+			cart = Cart.find_by(id: session[:cart_id]) 
 			if cart.present?
 				@current_cart = cart
 			else
@@ -25,9 +26,4 @@ class ApplicationController < ActionController::Base
 	end
 
 end
-
-
-
-
-
 
