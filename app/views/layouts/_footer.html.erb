@@ -1,0 +1,94 @@
+<!-- Footer-->
+    <footer class="bg-dark pt-5">
+      <!-- First Row-->
+      <div class="container pt-2">
+        <div class="row">
+          <!-- Shop Departments-->
+          <div class="col-lg-3">
+            <div class="widget widget-light-skin mb-0">
+              <h4 class="widget-title">Catégories</h4>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="widget widget-categories widget-light-skin">
+                  <ul>
+                    <li><a href="#">Computers &amp; Accessories</a></li>
+                    <li><a href="#">Smartphones &amp; Tablets</a></li>
+                    <li><a href="#">TV, Video &amp; Audio</a></li>
+                    <li><a href="#">Cameras, Photo &amp; Video</a></li>
+                    <li><a href="#">Headphones</a></li>
+                    <li><a href="#">Wearable Electroinics</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="widget widget-categories widget-light-skin">
+                  <ul>
+                    <li><a href="#">Printers &amp; Ink</a></li>
+                    <li><a href="#">Video Games</a></li>
+                    <li><a href="#">Car Electronics</a></li>
+                    <li><a href="#">Smart Home, IoT</a></li>
+                    <li><a href="#">Musical Instruments</a></li>
+                    <li><a href="#">Software</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- About Links-->
+          <div class="col-lg-3 col-sm-6">
+            <div class="widget widget-categories widget-light-skin">
+              <h4 class="widget-title">A Propos</h4>
+              <ul>
+                <li><a href="#">Carrières</a></li>
+                <li><a href="#">La Team Pussy Cat</a></li>
+                <li><a href="#">Notre Histoire</a></li>
+                <li><a href="#">Services</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Account Links-->
+          <div class="col-lg-3 col-sm-6">
+            <div class="widget widget-categories widget-light-skin">
+              <h4 class="widget-title">Compte &amp; Infos Livraison</h4>
+              <ul>
+              <% if user_signed_in? == false %>
+                <li><a href="<%= new_user_session_path %>">Connexion</a></li>
+                <li><a href="<%= new_user_registration_path %>">Créer un compte</a></li>
+              <% else %>
+                <li><a href="#">Mon Compte</a></li>
+                <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
+                <li><a href="#">Politique de &amp; Livraison</a></li>
+                <li><a href="#">Remboursements &amp; Remplacement</a></li>
+                <li><a href="#">Taxes</a></li>
+                <li><a href="#">Programme Affilié</a></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+          <!-- Contacts-->
+            <div class="col-lg-3 col-sm-6">
+              <div class="widget widget-contacts widget-light-skin mb-4">
+                <h4 class="widget-title">Contact</h4>
+                <ul>
+                  <li><i class="fas fa-map-marker-alt"></i><span>Notre Addresse</span><a href="#">Rue des Chats Vénères, 75000</a></li>
+                  <li><i class="fas fa-phone"></i><span>Appelle-nous</span><a href="tel:00180039025">001 800 390 25</a></li>
+                  <li><i class="far fa-envelope"></i><span>Par e-mail</span><a href="mailto:welcome@pussycat.com">welcome@pussycat.com</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- Second Row-->
+      <div class="pt-2" style="background-color: #30363d;">
+        <div class="container">
+          <div class="d-md-flex justify-content-between align-items-center py-4 text-center text-md-left">
+            <div class="order-2"><a class="footer-link text-white" href="#">A Propos</a><a class="footer-link text-white ml-3" href="#">Conditions Utilisations</a></div>
+            <p class="m-0 text-sm text-white order-1"><span class='opacity-60'>© Copyright 2019. Fais avec beaucoup d'amour et de croquettes Friskies</span> <i class='d-inline-block align-middle far fa-heart text-danger'></i></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Back To Top Button-->
+    <a class="scroll-to-top-btn" href="#"><i class="fas fa-chevron-up"></i></a>
+    <div class="site-backdrop"></div>
